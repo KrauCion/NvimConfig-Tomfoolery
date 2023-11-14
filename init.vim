@@ -3,19 +3,21 @@ set mouse=a " Allow to use the mouse in the editor
 set number " Shows the line numbers
 set tabstop=4 " Number of columns occupied by a tab
 set shiftwidth=4 " Width for autoindent
-set smarttab " 
-set clipboard=unnamedplus
-set softtabstop=4
-syntax on 	
+set smarttab " Insert tabs on the start of a line according to shiftwidth, not tabstop
+set clipboard=unnamedplus " Let's you copy and paste from within the editor to out
+set softtabstop=4 " Hitting backspace removes 4 tabs
+syntax on " Syntax highlighting
+
 
 " ---Just some notes---
+"
 " After installing vim-plug, is necessary to add these couple of lines on init.vim, so we can use :PlugInstall command.
 " The Plug command is to install the plugins we want to install in our configuration.
 " 
-" :PlugClean :PlugInstall :UpdateRemotePlugins
+" :PlugClean :PlugInstall :UpdateRemotePlugins :PlugUpdate
 
 
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+call plug#begin()
 
 Plug 'vim-airline/vim-airline' " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes' " Themes for the lines we call status 
